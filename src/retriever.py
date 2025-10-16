@@ -7,7 +7,7 @@ from src.utils import try_extract_article_id
 def retrieve(query: str, where: Optional[Dict[str, Any]] = None, n_results: int = TOP_K) -> List[Tuple[str, dict]]:
     """
     Returns list of (document_text, metadata) tuples.
-    Try an exact Article match first (e.g., "Article 6"), then semantic search.
+    Example: Article match first (e.g., "Article 6"), then semantic search.
     """
     client = get_chroma_client()
     collection = get_or_create_collection(client, COLLECTION_NAME)
